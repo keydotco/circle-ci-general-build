@@ -23,6 +23,7 @@ RUN pip install --upgrade virtualenv
 RUN pip install docker-compose
 RUN pip install awscli
 
+# install docker-machine
 RUN curl -L https://github.com/docker/machine/releases/download/v0.12.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && chmod +x /tmp/docker-machine && mv /tmp/docker-machine /usr/local/bin/docker-machine
-
-run curl -L curl -L https://releases.hashicorp.com/vault/0.8.0/vault_0.8.0_linux_amd64.zip >/tmp/vault_0.8.0_linux_amd64.zip && unzip /tmp/vault_0.8.0_linux_amd64.zip -d /tmp/ && mv /tmp/vault /usr/local/bin/vault && rm /tmp/vault_0.8.0_linux_amd64.zip
+# install vault
+RUN curl -L curl -L https://releases.hashicorp.com/vault/0.8.0/vault_0.8.0_linux_amd64.zip >/tmp/vault_0.8.0_linux_amd64.zip && unzip /tmp/vault_0.8.0_linux_amd64.zip -d /tmp/ && mv /tmp/vault /usr/local/bin/vault && rm /tmp/vault_0.8.0_linux_amd64.zip
