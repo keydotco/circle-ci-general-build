@@ -1,4 +1,4 @@
-FROM ubuntu:17.04
+FROM ubuntu:17.10
 
 # get core libraries and prep for additional repos 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y apt-transport-https ca-certificates curl software-properties-common unzip rsync ssh git
